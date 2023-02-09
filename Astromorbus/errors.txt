@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 27: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    play music "eerie.mp3" fadeout 1
-    ^
+File "game/script.rpy", line 126: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Lose Time"
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Feb  9 01:09:54 2023
+Thu Feb  9 02:48:52 2023
