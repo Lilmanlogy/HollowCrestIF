@@ -250,7 +250,7 @@ label start:
             jump fight
 
     label fight:
-            $ health = 3
+            $ health
             $ health_range = 3
             play music "audio/battle.wav"
             "Connie grabs a metal tube and whacks the crewmate with it knocking it out instantly"
