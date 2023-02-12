@@ -1,26 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 62, in script
-    $ time = time - 1
-  File "game/script.rpy", line 62, in <module>
-    $ time = time - 1
-NameError: name 'time' is not defined
+  File "game/script.rpy", line 322, in script
+    jump success
+ScriptError: could not find label 'success'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 62, in script
-    $ time = time - 1
-  File "C:\Users\Logan Weber\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Logan Weber\Downloads\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 62, in <module>
-    $ time = time - 1
-NameError: name 'time' is not defined
+  File "game/script.rpy", line 322, in script
+    jump success
+  File "C:\Users\Logan Weber\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1974, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Logan Weber\Downloads\renpy-8.0.3-sdk\renpy\script.py", line 927, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'success'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Astromorbus 1.0
-Thu Feb  9 02:32:59 2023
+Sun Feb 12 05:24:03 2023
