@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 168: reached end of line when expecting ':'.
-    if time = 0
-               ^
-
-File "game/script.rpy", line 171: reached end of line when expecting ':'.
-    if health = 0
-                 ^
-
-File "game/script.rpy", line 339: expected ':' not found.
-    label success
-                 ^
+File "game/script.rpy", line 41: expected statement.
+    health check:
+                ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Feb 12 05:30:58 2023
+Sun Feb 12 05:47:57 2023

@@ -137,15 +137,16 @@ label start:
 
 
     label scene2mainpath:
-    $ time = time - 1
-    if time = 0:
-        jump infected
+        $ time = time - 1
+        
+        if time == 0:
+            jump infected
 
         C "In for a penny..."
 
-    scene cafeteria
-    show Crewmate
-    with Dissolve(.5)
+        scene cafeteria
+        show Crewmate
+        with Dissolve(.5)
 
     C "There’s no way I can sneak around him!"
     C "Screw this, let’s do it head on!"
@@ -168,10 +169,10 @@ label start:
 
     label choice_punch:
     $ time = time -1
-    if time = 0:
+    if time == 0:
        jump infected
     $ health = health - 1
-    if health = 0:
+    if health == 0:
        jump death
     "Connie throws a punch at the infected crewmate easily, which is easily deflected and sent back at her"
     C "Screw this! I'm heading to the elevator"
@@ -180,7 +181,7 @@ label start:
         
     label choice_tray:
     $ time = time -1
-    if time = 0:
+    if time == 0:
         jump infected
     "Connie tosses the tray at the infected crewmate, distracting him allowing her to escape back to the elevator"
         
@@ -188,7 +189,7 @@ label start:
     
     label choice_table:
     $ time = time -1
-    if time = 0:
+    if time == 0:
         jump infected
     C "C'mon you piece of junk"
     "Connie pushes the table into the infected crewmate, pinning him to the wall"
@@ -201,6 +202,10 @@ label start:
 
 
     label scene2altpath:
+
+    scene mainpath
+    with Dissolve (1.0)
+
     C "I don't have the time to take the stairs."
     C "The med bay is on...on..."
     C "I can't remember, DAMN IT!"
@@ -220,7 +225,7 @@ label start:
     
     label flooreight:
     $ time = time - 1
-    if time = 0:
+    if time == 0:
         jump infected
     C "UGH! Theres nothing in here. A literal time waster!"
     
@@ -228,7 +233,7 @@ label start:
 
     label floorthree:
     $ time = time - 1
-    if time = 0:
+    if time == 0:
         jump death
     show Crewmate
     C "Why me why today..."
@@ -244,7 +249,7 @@ label start:
             hide Crewmate
             C "Ok \*pants\* I should head...OW!"
             $ health = health - 1
-            if health = 0:
+            if health == 0:
                 jump death
             show Crewmate
             "Another infected crew member rises up off the floor, but Connie takes another lucky swing"
@@ -255,7 +260,7 @@ label start:
 
     label floorfive:
         $ time = time - 1
-        if time = 0:
+        if time == 0:
             jump infected
         C "Another dead...wait... a map right! The med bay is back where I came from"
         C "And a ship manifesto"
@@ -266,7 +271,7 @@ label start:
          
     label floorb:
         $ time = time - 1
-        if time = 0:
+        if time == 0:
             jump infected
         C "The engine room is down this way...I think..."
         C "I can't remember my own ship, what the hell!"
@@ -275,6 +280,8 @@ label start:
         jump medbay
     
     label medbay:
+        scene medbaydoor
+        with Dissolve (0.5)
         C "Doctor! It's me, let me in!"
         D "Hold on Connie, while I'd love to, I need you to wait here for just a minute"
         D "I need to test you to make sure your not too far gone"
@@ -337,23 +344,31 @@ label start:
         jump infected
 
     label finale:
+        scene bg black
+        with Dissolve (1.0)
         D "I hope you can forgive me for delaying you...?"
         C "It's fine, just give me the cure..."
 
         jump success
     
     label death:
+        scene bg black
+        with Dissolve (1.0)
         C "Gah! Not like this!"
 
         jump end
 
     label infected:
+        scene bg black
+        
         "Connie feels the infected run through here body"
         C "I’m almo…I’m atmost…. I’m compo…No…no pleas…tim….tim…I knee…..AHHH!"
 
         jump end
 
     label success:
+        scene bg black
+        with Dissolve (1.0)
         "With the cure in her system, Connie and Doctor Morgana start working on plans to get back control of the Astromorbus"
 
         jump end
