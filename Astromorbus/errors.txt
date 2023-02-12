@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 41: expected statement.
-    health check:
-                ^
+File "game/script.rpy", line 251: play requires a channel
+    play "battle.wav"
+         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Feb 12 05:47:57 2023
+Sun Feb 12 13:50:26 2023
